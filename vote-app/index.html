@@ -23,45 +23,29 @@
     <div class="container" id="app">
       <div class="card-group">
        
-        <div class="card">
+
+
+        <div class="card  m-4 " v-for="storie in stories" :key="storie.id">
           <img
             class="card-img-top"
-            src="https://loremflickr.com/320/240?random=2"
+            :src="storie.storyImage"
             alt="Card image cap"
           />
           <div class="card-body">
-            <h5 class="card-title">Marsh</h5>
+            <h5 class="card-title">{{storie.title}}</h5>
             <p class="card-text">
-              This card has supporting text below as a natural lead-in to
-              additional content.
+              {{storie.text}}
             </p>
             <p class="card-text">
-              <small class="text-muted">published 3 mins ago</small>
+              <small class="text-muted">{{storie.postedAt}}</small>
             </p>
-            <button class="btn btn-primary">UpVote</button>
-            <span class="badge badge-secondary float-right">4</span>
+            <button class="btn btn-primary" @click="addVote(storie.id)">UpVote</button>
+            <span class="badge badge-secondary float-right">{{storie.votes}}</span>
           </div>
         </div>
-        <div class="card">
-          <img
-            class="card-img-top"
-            src="https://loremflickr.com/320/240?random=3"
-            alt="Card image cap"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Cattle</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This card has even longer content
-              than the first to show that equal height action.
-            </p>
-            <p class="card-text">
-              <small class="text-muted">published 3 mins ago</small>
-            </p>
-            <button class="btn btn-primary">UpVote</button>
-            <span class="badge badge-secondary float-right">4</span>
-          </div>
-        </div>
+
+
+        
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
