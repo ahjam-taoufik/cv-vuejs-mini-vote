@@ -6,11 +6,24 @@ new Vue({
 		stories: Feed.stories
 	},
 	methods: {
+		// version2
 		addVote(id){
-			this.stories.findIndex((storie)=>{
-                if(storie.id===id){
-					storie.votes++
-				}
+			const index =this.stories.findIndex(storie=>storie.id===id)
+			this.stories[index].votes++
+		},
+		// version 1
+		// addVote(id){
+		// 	this.stories.findIndex((storie)=>{
+        //         if(storie.id===id){
+		// 			storie.votes++
+		// 		}
+		// 	})
+		// },
+	},
+	computed:{
+		sortByVotes(){
+			return this.stories.sort((a,b)=>{
+				return b.votes-a.votes
 			})
 		}
 	}

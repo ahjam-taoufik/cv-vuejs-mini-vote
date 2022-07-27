@@ -25,7 +25,7 @@
        
 
 
-        <div class="card  m-4 " v-for="storie in stories" :key="storie.id">
+        <div class="card  m-4 " v-for="storie in sortByVotes" :key="storie.id">
           <img
             class="card-img-top"
             :src="storie.storyImage"
