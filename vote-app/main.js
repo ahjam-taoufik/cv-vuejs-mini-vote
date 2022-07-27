@@ -3,7 +3,7 @@
 new Vue({
 	el: '#app',
 	data: {
-		stories: Feed.stories
+		stories: Feed.stories,
 	},
 	methods: {
 		// version2
@@ -22,6 +22,7 @@ new Vue({
 	},
 	computed:{
 		sortByVotes(){
+			
 			return this.stories.sort((a,b)=>{
 				return b.votes-a.votes
 			})

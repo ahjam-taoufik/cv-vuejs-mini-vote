@@ -40,7 +40,12 @@
               <small class="text-muted">{{storie.postedAt}}</small>
             </p>
             <button class="btn btn-primary" @click="addVote(storie.id)">UpVote</button>
-            <span class="badge badge-secondary float-right">{{storie.votes}}</span>
+            <span 
+            class="badge  float-right"
+            :class="[storie.votes>3 ? 'badge-success':'badge-primary']"
+           
+            
+            >{{storie.votes}}</span>
           </div>
         </div>
 
